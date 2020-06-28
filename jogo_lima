@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Jogo da Memória</title>
+  <style>
+  
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+     body {
+       height: 100vh;
+       background-image: url("https://img.elo7.com.br/product/zoom/1E976B9/papel-de-parede-pastilhas-41-papel-de-parede-arabesco-vintage.jpg")
+     }
+     
+     .footer {
+       width: 80%;
+       height: 8vh;
+       background-image: linear-gradient(-80deg, rgba(0,160,0,1), rgba(0,180,0,1));
+       border-radius: 5px;
+       border-style: solid;
+       border-color: #8b4513;
+       margin: auto;
+       margin-top: 2vh;
+       text-align: center;
+       padding-top: 7px;
+     }
+
+    .memory-game {
+       width: 75vw;
+       height: 90vh;
+       margin: auto;
+       display: flex;
+       flex-wrap: wrap;
+       perspective: 1000px;
+     }
+     
+         .memory-card {
+  width: calc(16.666% - 10px);
+  height: calc(33.333% - 10px);
+  margin: 5px;
+  position: relative;
+  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform .5s;
+}
+
+   .front-face,
+   .back-face {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 5px;
+  background: #ffffff;
+  backface-visibility: hidden;
+}
+
+.front-face {
+  transform: rotateY(180deg);
+}
+
+ .memory-card:active {
+   transform: scale(0.97);
+   transition: transform .2s;
+ }
+
+.memory-card.flip {
+  transform: rotateY(180deg);
+}
+
+  </style>
+</head>
+<body>
+  <section class="memory-game">
+  <div class="memory-card" data-framework="1">
+    <img class="front-face" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Playing_card_club_A.svg/300px-Playing_card_club_A.svg.png" alt="Face da Carta">
+    <img class="back-face" src="https://i.pinimg.com/originals/10/80/a4/1080a4bd1a33cec92019fab5efb3995d.png" alt="Verso da Carta">
+  </div>
+
+  <div class="memory-card" data-framework="1">
+    <img class="front-face" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Playing_card_club_A.svg/300px-Playing_card_club_A.svg.png" alt="Face da Carta">
+    <img class="back-face" src="https://i.pinimg.com/originals/10/80/a4/1080a4bd1a33cec92019fab5efb3995d.png" alt="Verso da Carta">
+  </div>
+
+  <div class="memory-card" data-framework="2">
+    <img class="front-face" src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Playing_card_diamond_A.svg" alt="Face da Carta">
+    <img class="back-face" src="https://i.pinimg.com/originals/10/80/a4/1080a4bd1a33cec92019fab5efb3995d.png" alt="Verso da Carta">
+  </div>
+
+  <div class="memory-card" data-framework="2">
+    <img class="front-face" src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Playing_card_diamond_A.svg" alt="Face da Carta">
+    <img class="back-face" src="https://i.pinimg.com/originals/10/80/a4/1080a4bd1a33cec92019fab5efb3995d.png" alt="Verso da Carta">
+  </div>
+
+  <div class="memory-card" data-framework="3">
+    <img class="front-face" src="https://upload.wikimedia.org/wikipedia/commons/5/57/Playing_card_heart_A.svg" alt="Face da Carta">
+    <img class="back-face" src="https://i.pinimg.com/originals/10/80/a4/1080a4bd1a33cec92019fab5efb3995d.png" alt="Verso da Carta">
+  </div>
+
+  <div class="memory-card" data-framework="3">
+    <img class="front-face" src="https://upload.wikimedia.org/wikipedia/commons/5/57/Playing_card_heart_A.svg" alt="Face da Carta">
+    <img class="back-face" src="https://i.pinimg.com/originals/10/80/a4/1080a4bd1a33cec92019fab5efb3995d.png" alt="Verso da Carta">
+  </div>
+
+  <div class="memory-card" data-framework="4">
+    <img class="front-face" src="https://upload.wikimedia.org/wikipedia/commons/2/25/Playing_card_spade_A.svg" alt="Face da Carta">
+    <img class="back-face" src="https://i.pinimg.com/originals/10/80/a4/1080a4bd1a33cec92019fab5efb3995d.png" alt="Verso da Carta">
+  </div>
+
+  <div class="memory-card" data-framework="4">
+    <img class="front-face" src="https://upload.wikimedia.org/wikipedia/commons/2/25/Playing_card_spade_A.svg" alt="Face da Carta">
+    <img class="back-face" src="https://i.pinimg.com/originals/10/80/a4/1080a4bd1a33cec92019fab5efb3995d.png" alt="Verso da Carta">
+  </div>
+
+  <div class="memory-card" data-framework="5">
+    <img class="front-face" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/English_pattern_queen_of_clubs.svg/540px-English_pattern_queen_of_clubs.svg.png" Face da Carta="Backbone">
+    <img class="back-face" src="https://i.pinimg.com/originals/10/80/a4/1080a4bd1a33cec92019fab5efb3995d.png" alt="Verso da Carta">
+  </div>
+
+  <div class="memory-card" data-framework="5">
+    <img class="front-face" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/English_pattern_queen_of_clubs.svg/540px-English_pattern_queen_of_clubs.svg.png" Face da Carta="Backbone">
+    <img class="back-face" src="https://i.pinimg.com/originals/10/80/a4/1080a4bd1a33cec92019fab5efb3995d.png" alt="Verso da Carta">
+  </div>
+
+  <div class="memory-card" data-framework="6">
+    <img class="front-face" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/English_pattern_jack_of_hearts.svg/540px-English_pattern_jack_of_hearts.svg.png" alt="Face da Carta">
+    <img class="back-face" src="https://i.pinimg.com/originals/10/80/a4/1080a4bd1a33cec92019fab5efb3995d.png" alt="Verso da Carta">
+  </div>
+
+  <div class="memory-card" data-framework="6">
+    <img class="front-face" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/English_pattern_jack_of_hearts.svg/540px-English_pattern_jack_of_hearts.svg.png" alt="Face da Carta">
+    <img class="back-face" src="https://i.pinimg.com/originals/10/80/a4/1080a4bd1a33cec92019fab5efb3995d.png" alt="Verso da Carta">
+  </div>
+  
+  <div class="memory-card" data-framework="7">
+    <img class="front-face" src="https://upload.wikimedia.org/wikipedia/commons/f/f1/English_pattern_king_of_spades.svg" alt="Face da Carta">
+    <img class="back-face" src="https://i.pinimg.com/originals/10/80/a4/1080a4bd1a33cec92019fab5efb3995d.png" alt="Verso da Carta">
+  </div>
+  
+  <div class="memory-card" data-framework="7">
+    <img class="front-face" src="https://upload.wikimedia.org/wikipedia/commons/f/f1/English_pattern_king_of_spades.svg" alt="Face da Carta">
+    <img class="back-face" src="https://i.pinimg.com/originals/10/80/a4/1080a4bd1a33cec92019fab5efb3995d.png" alt="Verso da Carta">
+  </div>
+  
+  <div class="memory-card" data-framework="8">
+    <img class="front-face" src="https://upload.wikimedia.org/wikipedia/commons/d/da/English_pattern_10_of_diamonds.svg" alt="Face da Carta">
+    <img class="back-face" src="https://i.pinimg.com/originals/10/80/a4/1080a4bd1a33cec92019fab5efb3995d.png" alt="Verso da Carta">
+  </div>
+  
+  <div class="memory-card" data-framework="8">
+    <img class="front-face" src="https://upload.wikimedia.org/wikipedia/commons/d/da/English_pattern_10_of_diamonds.svg" alt="Face da Carta">
+    <img class="back-face" src="https://i.pinimg.com/originals/10/80/a4/1080a4bd1a33cec92019fab5efb3995d.png" alt="Verso da Carta">
+  </div>
+  
+  <div class="memory-card" data-framework="9">
+    <img class="front-face" src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Joker_black_02.svg" alt="Face da Carta">
+    <img class="back-face" src="https://i.pinimg.com/originals/10/80/a4/1080a4bd1a33cec92019fab5efb3995d.png" alt="Verso da Carta">
+  </div>
+  
+  <div class="memory-card" data-framework="9">
+    <img class="front-face" src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Joker_black_02.svg" alt="Face da Carta">
+    <img class="back-face" src="https://i.pinimg.com/originals/10/80/a4/1080a4bd1a33cec92019fab5efb3995d.png" alt="Verso da Carta">
+  </div>
+ </div>
+</section>
+  <script>
+  const cards = document.querySelectorAll('.memory-card');
+  var pontuacao = 0;
+
+  let hasFlippedCard = false;
+  let lockBoard = false;
+  let firstCard, secondCard;
+
+  function flipCard() {
+      if (lockBoard) return;
+      if (this === firstCard) return;
+      
+      this.classList.add('flip');
+  
+  if (!hasFlippedCard) {
+    hasFlippedCard = true;
+    firstCard = this;
+    return;
+   }
+
+   secondCard = this;
+
+   checkForMatch();
+ }
+
+ function checkForMatch() {
+   let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
+ isMatch ? disableCards() : unflipCards();
+ }
+
+ function disableCards() {
+   firstCard.removeEventListener('click', flipCard);
+   secondCard.removeEventListener('click', flipCard);
+   
+   resetBoard();
+   pontuar(++pontuacao);
+ }
+
+ function unflipCards() {
+   lockBoard = true;
+ 
+   setTimeout(() => {
+     firstCard.classList.remove('flip');
+     secondCard.classList.remove('flip');
+     
+   resetBoard();
+   }, 1000);
+   pontuar(--pontuacao);
+ }
+   
+  function resetBoard() {
+   [hasFlippedCard, lockBoard] = [false, false];
+   [firstCard, secondCard] = [null, null];
+ }
+ 
+ (function shuffle() {
+   cards.forEach(card => {
+     let ramdomPos = Math.floor(Math.random() * 18);
+     card.style.order = ramdomPos;
+   });
+ })();
+ 
+cards.forEach(card => card.addEventListener('click', flipCard));
+
+ localStorage.setItem("record", 0);
+ var record = localStorage.getItem("record");
+ 
+ function pontuar(pontos){
+    var spanPontuacao = document.getElementById("pontuacao")
+    spanPontuacao.innerHTML = pontos
+    
+    if(pontuacao <= 0){
+      pontuacao = 1;
+    }
+    
+    if (pontos > record){
+      record = pontos
+      localStorage("record", record);
+    }
+    
+    var spanRecord = document.getElementById("record")
+    spanRecord.innerHTML = record;
+ }
+ 
+  </script>
+  <section class="footer">
+    <div>
+      <p>Pontuação: <span id="pontuacao"></span>.</p>
+    </div>
+  </section>
+</body>
+</html>
